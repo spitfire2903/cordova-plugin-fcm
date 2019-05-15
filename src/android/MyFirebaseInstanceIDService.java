@@ -12,9 +12,10 @@ public class MyFirebaseInstanceIDService extends FirebaseMessagingService {
     
     private static final String TAG = "FCMPlugin";
 
+    @Override
     public void onNewToken (String newToken) {
         super.onNewToken(newToken);
-        Log.d("NEW_TOKEN", newToken);
+        Log.d(TAG, "NEW_TOKEN: " + newToken);
         FCMPlugin.sendTokenRefresh(newToken);
     }
 }
